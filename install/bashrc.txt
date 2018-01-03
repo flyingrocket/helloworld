@@ -1,0 +1,71 @@
+# prompt
+txtblk='\e[0;30m' # Black - Regular
+txtred='\e[0;31m' # Red
+txtgrn='\e[0;32m' # Green
+txtylw='\e[0;33m' # Yellow
+txtblu='\e[0;34m' # Blue
+txtpur='\e[0;35m' # Purple
+txtcyn='\e[0;36m' # Cyan
+txtwht='\e[0;37m' # White
+bldblk='\e[1;30m' # Black - Bold
+bldred='\e[1;31m' # Red
+bldgrn='\e[1;32m' # Green
+bldylw='\e[1;33m' # Yellow
+bldblu='\e[1;34m' # Blue
+bldpur='\e[1;35m' # Purple
+bldcyn='\e[1;36m' # Cyan
+bldwht='\e[1;37m' # White
+unkblk='\e[4;30m' # Black - Underline
+undred='\e[4;31m' # Red
+undgrn='\e[4;32m' # Green
+undylw='\e[4;33m' # Yellow
+undblu='\e[4;34m' # Blue
+undpur='\e[4;35m' # Purple
+undcyn='\e[4;36m' # Cyan
+undwht='\e[4;37m' # White
+bakblk='\e[40m'   # Black - Background
+bakred='\e[41m'   # Red
+bakgrn='\e[42m'   # Green
+bakylw='\e[43m'   # Yellow
+bakblu='\e[44m'   # Blue
+bakpur='\e[45m'   # Purple
+bakcyn='\e[46m'   # Cyan
+bakwht='\e[47m'   # White
+txtrst='\e[0m'    # Text Reset
+
+if [ $(whoami) == 'root' ]
+then
+  PS1="\[$bakwht\] \[$txtred$bakwht\]\u@\h \w "'\$'" \[$txtrst\] "
+else
+  PS1="\[$txtblk$bakwht\]\u@\h \w "'\$'" \[$txtrst\] "
+fi
+
+alias ..='cd ..'
+alias ...='cd ../..'
+alias _busy='cat /dev/urandom | hexdump -C | grep '\''ca fe'\'''
+alias _cmount='mount | column -t'
+alias _connect_poppins_vm_master='ssh -p 2222 root@127.0.0.1'
+alias _ducks='du -cks * | sort -rn | head'
+alias _hgrep='history | grep'
+alias _intercept='sudo strace -ff -e trace=write -e write=1,2 -p'
+alias _ipinfo='curl ifconfig.me && curl ifconfig.me/host'
+alias _listen='lsof -P -i -n'
+alias _meminfo='free -m -l -t'
+alias _port='netstat -tulanp'
+alias _tree='ls -R | grep : | sed -e '\''s/:$//'\'' -e '\''s/[^-][^\/]*\//--/g'\'' -e '\''s/^/   /'\'' -e '\''s/-/|/'\'''
+alias _upgrade='sudo apt-get update && sudo apt-get dist-upgrade && sudo apt-get autoremove'
+alias _volume='amixer get Master | sed '\''1,4 d'\'' | cut -d [ -f 2 | cut -d ] -f 1'
+alias _webshare='python -c "import SimpleHTTPServer;SimpleHTTPServer.test()"'
+alias _websiteget='wget --random-wait -r -p -e robots=off -U mozilla'
+alias egrep='egrep --color'
+alias grep='grep --color'
+alias l='ls -CF -color'
+alias la='ls -A -color'
+alias ld='ls -ld -color'
+alias ll='ls -l -color'
+alias lla='ls -la -color'
+alias ls='ls --color=auto'
+alias lt='ls -lt'
+alias ltr='ls -lrt'
+alias tree='tree -C'
+alias vi='vim'

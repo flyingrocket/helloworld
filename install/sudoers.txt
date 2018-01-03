@@ -1,0 +1,3 @@
+#brdooms
+brdooms ALL=NOPASSWD: /usr/bin/apt-get, /usr/bin/aptitude, /usr/bin/apt, /usr/sbin/checkrestart
+

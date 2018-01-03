@@ -1,0 +1,8 @@
+mkdir /mnt 
+mount /dev/sda5 /mnt 
+mount -o bind /dev /mnt/dev 
+mount -o bind /proc /mnt/proc 
+mount -o bind /sys /mnt/sys 
+chroot /mnt bash 
+update-grub  # grub-install /dev/sda
+reboot

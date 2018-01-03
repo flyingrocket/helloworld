@@ -1,0 +1,16 @@
+cryptsetup: mount encrypted drive
+
+The first step is to get the name of the encrypted partition, with the following command:
+
+blkid | grep crypto
+
+sample output:
+/dev/sda2: UUID="VERY LONG NUMBER" TYPE="crypto_LUKS"
+
+Now we know the name of the partition /dev/sda2. The next step is to open the partition and set up a mapping name:
+cryptsetup luksOpen /dev/sda2/ 
+
+Mount it:
+mount /dev/xubuntu-vg/root /mnt
+
+Now the partition is decrypted and mounted and you are able to access your files.

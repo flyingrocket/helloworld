@@ -1,0 +1,1 @@
+sudo apt-get install vim ipython3 openssh-client openssh-server aptitude terminator ninja-ide mercurial tortoisehg chromium-browser midori debian-goodies aptitude htop nmon tmux tree unzip unrar
